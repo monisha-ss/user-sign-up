@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 export class GenericValidator {
   public regex = {
     email: '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$',
-    password: '/^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])/',
+    password: /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])/,
   };
 
   getValidationErrors(group: FormGroup, validationMessages: Object): any {
