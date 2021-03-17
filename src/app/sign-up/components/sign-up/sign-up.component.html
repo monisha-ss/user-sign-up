@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-4 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h5>Sign Up</h5>
+        </div>
+        <div class="card-body">
+          <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+            <!-- First Name Field starts here -->
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <span class="text-danger m-1">*</span>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstName"
+              />
+              <span class="text-danger" *ngIf="formErrors.firstName">
+                {{ formErrors.firstName }}
+              </span>
+            </div>
+            <!-- First Name Field ends here -->
+
+            <!-- Last Name Field starts here -->
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <span class="text-danger m-1">*</span>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="lastName"
+              />
+              <span class="text-danger" *ngIf="formErrors.lastName">
+                {{ formErrors.lastName }}
+              </span>
+            </div>
+            <!-- Last Name Field ends here -->
+
+            <!-- Email Field starts here -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <span class="text-danger m-1">*</span>
+              <input type="text" class="form-control" formControlName="email" />
+              <span class="text-danger" *ngIf="formErrors.email">
+                {{ formErrors.email }}
+              </span>
+            </div>
+            <!-- Email Field ends here -->
+
+            <!-- Password Field starts here -->
+            <div class="form-group">
+              <label for="password">Password</label>
+              <span class="text-danger m-1">*</span>
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+              />
+              <span class="text-danger" *ngIf="formErrors.password">
+                {{ formErrors.password }}
+              </span>
+            </div>
+            <!-- Password Field ends here -->
+
+            <!-- Submit button starts here -->
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                [disabled]="!signUpForm.valid"
+              >
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+                Sign Up
+              </button>
+            </div>
+            <!-- Submit button ends here -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
