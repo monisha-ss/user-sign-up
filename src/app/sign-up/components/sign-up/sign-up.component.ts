@@ -84,7 +84,7 @@ export class SignUpComponent implements OnInit {
     );
 
     this.signUpForm.valueChanges
-      .pipe(debounceTime(1000))
+      .pipe(debounceTime(200))
       .subscribe((value) => this.logValidationErrors());
   }
 
@@ -110,7 +110,7 @@ export class SignUpComponent implements OnInit {
       this.signUpService.createSignUp(this.signUpForm.value).subscribe(() => {
         this.loading = false;
         this.toastMessageService.showSuccess('Signed Up Successfully');
-        () => {
+        (error) => {
           this.loading = false;
           this.toastMessageService.showError(
             'Something went wrong ! Please contact admin'

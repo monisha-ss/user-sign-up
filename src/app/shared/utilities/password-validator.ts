@@ -10,9 +10,9 @@ export class PasswordMatcher {
       const controlFirstName = formGroup.controls[firstName];
       const controlLastName = formGroup.controls[lastName];
       const controlPassword = formGroup.controls[password];
-      const firstNameLower = controlPassword.value.toLowerCase();
-      const lastNameLower = controlFirstName.value.toLowerCase();
-      const passwordNameLower = controlLastName.value.toLowerCase();
+      const firstNameLower = controlFirstName.value.toLowerCase();
+      const lastNameLower = controlLastName.value.toLowerCase();
+      const passwordNameLower = controlPassword.value.toLowerCase();
 
       if (!controlFirstName || !controlLastName || !controlPassword) {
         return null;
